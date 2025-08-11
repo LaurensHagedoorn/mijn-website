@@ -4,202 +4,230 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Laurens Hagedoorn — Portfolio</title>
-  <meta name="description" content="Portfolio van Laurens Hagedoorn: bio, werk, opleiding, vaardigheden en contact." />
+  <meta name="description" content="Assistent-accountancy | AA Oriëntatie Accountancy MKB | Werkervaring, opleidingen en vaardigheden." />
+  <meta name="theme-color" content="#800020" />
   <link rel="icon" href="images/favicon.png" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Laurens Hagedoorn — Portfolio">
+  <meta property="og:description" content="Assistent-accountancy | AA Oriëntatie Accountancy MKB | Werkervaring, opleidingen en vaardigheden.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Laurens Hagedoorn",
+    "email":"mailto:lhagedoorn@hotmail.nl",
+    "jobTitle":"Assistent accountancy (MKB)",
+    "alumniOf":"Christelijke Hogeschool Windesheim",
+    "url":"https://<jouwdomein>",
+    "sameAs":[ "https://www.linkedin.com/in/<jouw-handle>" ]
+  }
+  </script>
+
   <style>
     :root{
-      --bg: #000000;
-      --ink: #ffffff;
-      --muted: #cfcfcf;
-      --line: #2a2a2a;
-      --accent: #800020; /* bordeaux */
-      --radius: 14px;
-      --shadow: 0 4px 16px rgba(0,0,0,.35);
-      --maxw: 1100px;
+      --bg:#000; --ink:#fff; --muted:#cfcfcf; --line:#2a2a2a;
+      --accent:#800020; /* bordeaux */
+      --radius:14px; --shadow:0 4px 16px rgba(0,0,0,.35);
+      --maxw:1100px;
     }
     *,*::before,*::after{ box-sizing:border-box }
-    html{ scroll-behavior: smooth; }
+    html{ scroll-behavior:smooth }
     html,body{ margin:0; padding:0 }
-    body{ font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; background: var(--bg); color: var(--ink); line-height: 1.65; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
-    a{ color: inherit; text-decoration: none; font-weight: 700; }
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:var(--bg); color:var(--ink); line-height:1.65;
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    a{ color:inherit; text-decoration:none; font-weight:700 }
+
+    /* Toegankelijkheid */
+    :focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:6px }
+    @media (prefers-reduced-motion:reduce){
+      html{ scroll-behavior:auto }
+      .reveal{ transition:none; opacity:1; transform:none }
+      .nav a,.sidebar-toggle,.t-item,.skill-box,aside{ transition:none }
+    }
 
     /* Layout */
-    .wrap{ width:min(95%, var(--maxw)); margin:0 auto; display:grid; grid-template-columns: 320px 1fr; gap: 32px; }
-    @media (max-width: 960px){ .wrap{ grid-template-columns: 1fr } }
-    body.nav-collapsed .wrap{ grid-template-columns: 1fr; }
+    .wrap{ width:min(95%,var(--maxw)); margin:0 auto; display:grid; grid-template-columns:320px 1fr; gap:32px }
+    @media (max-width:960px){ .wrap{ grid-template-columns:1fr } }
+    body.nav-collapsed .wrap{ grid-template-columns:1fr }
+    main{ padding:28px 0 }
+    section{ padding:18px 0 36px; scroll-margin-top:16px }
 
-    /* Sidebar met animatie */
-    aside{
-      position: sticky; top: 0; height: 100dvh; padding: 28px 0; border-right: 1px solid var(--line);
-      display:flex; flex-direction:column; justify-content:space-between; gap:24px; background: var(--bg);
-      transition: transform .35s ease, opacity .3s ease; will-change: transform;
+    /* Skip link */
+    .skip{ position:absolute; left:-9999px; top:auto }
+    .skip:focus{ left:14px; top:14px; background:#161616; padding:8px 10px; border-radius:8px }
+
+    /* Sidebar */
+    aside[role="complementary"]{
+      position:sticky; top:0; height:100dvh; padding:28px 0; border-right:1px solid var(--line);
+      display:flex; flex-direction:column; justify-content:space-between; gap:24px; background:var(--bg);
+      transition: transform .6s ease, opacity .55s ease; will-change:transform;
     }
-    /* Ingeklapt: laat de sidebar wegglijden i.p.v. display:none */
-    body.nav-collapsed aside{ transform: translateX(-110%); opacity: 0; }
+    body.nav-collapsed aside{ transform:translateX(-110%); opacity:0 }
 
-    .brand h1{ font-size: clamp(22px, 3.2vw, 30px); margin:0 0 6px 0; letter-spacing: .3px; color: var(--accent) }
+    .brand h1{ font-size:clamp(22px,3.2vw,30px); margin:0 0 6px; letter-spacing:.3px; color:var(--accent) }
 
-    /* Nav links met subtiele underline-animatie en staggered fade-in */
-    .nav{ display:flex; flex-direction:column; gap:10px; margin-top:22px }
+    /* Navigatie */
+    nav[aria-label="Hoofdmenu"]{ display:flex; flex-direction:column; gap:10px; margin-top:22px }
     .nav a{
-      position:relative; padding:12px 14px; border:1px solid transparent; border-radius: 10px;
-      display:flex; align-items:center; gap:10px; color: var(--ink); font-weight: 800;
-      opacity: 1; transform: translateX(0);
-      transition: border-color .2s ease, color .2s ease, opacity .35s ease, transform .35s ease;
+      position:relative; padding:12px 14px; border:1px solid transparent; border-radius:10px;
+      display:flex; align-items:center; gap:10px; font-weight:800;
+      opacity:1; transform:translateX(0);
+      transition: border-color .25s ease, color .25s ease, opacity .6s ease, transform .6s ease;
     }
-    body:not(.nav-collapsed) .nav a:nth-child(1){ transition-delay: .04s }
-    body:not(.nav-collapsed) .nav a:nth-child(2){ transition-delay: .08s }
-    body:not(.nav-collapsed) .nav a:nth-child(3){ transition-delay: .12s }
-    body:not(.nav-collapsed) .nav a:nth-child(4){ transition-delay: .16s }
-    body:not(.nav-collapsed) .nav a:nth-child(5){ transition-delay: .20s }
-    body.nav-collapsed .nav a{ opacity: 0; transform: translateX(-8px); transition-delay: 0s }
+    body:not(.nav-collapsed) .nav a:nth-child(1){ transition-delay:.08s }
+    body:not(.nav-collapsed) .nav a:nth-child(2){ transition-delay:.16s }
+    body:not(.nav-collapsed) .nav a:nth-child(3){ transition-delay:.24s }
+    body:not(.nav-collapsed) .nav a:nth-child(4){ transition-delay:.32s }
+    body:not(.nav-collapsed) .nav a:nth-child(5){ transition-delay:.40s }
+    body:not(.nav-collapsed) .nav a:nth-child(6){ transition-delay:.48s }
+    body.nav-collapsed .nav a{ opacity:0; transform:translateX(-12px); transition-delay:0s }
     .nav a::after{
-      content:""; position:absolute; left:14px; right:14px; bottom:8px; height:2px; background: var(--accent);
-      transform: scaleX(0); transform-origin: left; transition: transform .25s ease; border-radius:2px
+      content:""; position:absolute; left:14px; right:14px; bottom:8px; height:2px; background:var(--accent);
+      transform:scaleX(0); transform-origin:left; transition:transform .3s ease; border-radius:2px
     }
-    .nav a:hover{ border-color: var(--accent); color: var(--accent) }
-    .nav a:hover::after{ transform: scaleX(1) }
+    .nav a:hover{ border-color:var(--accent); color:var(--accent) }
+    .nav a:hover::after, .nav a.active::after{ transform:scaleX(1) }
+    .nav a.active{ border-color:var(--accent); color:var(--accent) }
 
-    /* Scrollspy actieve staat */
-    .nav a.active{ border-color: var(--accent); color: var(--accent); }
-    .nav a.active::after{ transform: scaleX(1) }
+    .meta{ display:grid; gap:8px; font-size:14px; color:var(--muted); border-top:1px solid var(--line); padding-top:16px }
 
-    .meta{ display:grid; gap:8px; font-size: 14px; color: var(--muted); border-top:1px solid var(--line); padding-top:16px; }
-
-    /* Toggle knop met animatie naar 'X' */
+    /* Toggle knop */
     .sidebar-toggle{
-      position: fixed; z-index: 50; top: 14px; left: 14px; background: #161616; color: var(--ink);
-      border:1px solid var(--line); border-radius: 12px; padding: 10px 12px; cursor: pointer;
-      display:flex; align-items:center; gap:10px; box-shadow: var(--shadow); transition: background .2s ease, transform .15s ease;
+      position:fixed; z-index:50; top:14px; left:14px; background:#161616; color:var(--ink);
+      border:1px solid var(--line); border-radius:12px; padding:10px 12px; cursor:pointer;
+      display:flex; align-items:center; gap:10px; box-shadow:var(--shadow);
+      transition: background .2s ease, transform .15s ease;
     }
-    .sidebar-toggle:hover{ transform: translateY(-1px) }
+    .sidebar-toggle:hover{ transform:translateY(-1px) }
     .sidebar-toggle .bars{ display:inline-block; width:20px; height:14px; position:relative }
     .sidebar-toggle .bars::before, .sidebar-toggle .bars::after, .sidebar-toggle .bars span{
-      content:""; position:absolute; left:0; right:0; height:2px; background: var(--ink); border-radius:2px;
-      transition: transform .25s ease, opacity .2s ease, top .25s ease, bottom .25s ease
+      content:""; position:absolute; left:0; right:0; height:2px; background:var(--ink); border-radius:2px;
+      transition: transform .4s ease, opacity .3s ease, top .4s ease, bottom .4s ease
     }
     .sidebar-toggle .bars::before{ top:0 }
     .sidebar-toggle .bars span{ top:6px }
     .sidebar-toggle .bars::after{ bottom:0 }
-    .sidebar-toggle.active .bars::before{ transform: rotate(45deg); top:6px }
-    .sidebar-toggle.active .bars span{ opacity:0 }
-    .sidebar-toggle.active .bars::after{ transform: rotate(-45deg); bottom:6px }
+    .sidebar-toggle[aria-expanded="true"] .bars::before{ transform:rotate(45deg); top:6px }
+    .sidebar-toggle[aria-expanded="true"] .bars span{ opacity:0 }
+    .sidebar-toggle[aria-expanded="true"] .bars::after{ transform:rotate(-45deg); bottom:6px }
 
-    main{ padding: 28px 0; }
-    section{ padding: 18px 0 36px }
+    /* Cards & titels */
+    .card{ border:1px solid var(--line); border-radius:var(--radius); padding:26px; box-shadow:var(--shadow); background:#101010 }
+    .section-title{ font-size:clamp(16px,1.6vw,18px); letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin:0 0 14px }
+    .section-title::after{ content:""; display:block; width:72px; height:3px; background:var(--accent); border-radius:2px; margin-top:10px }
 
-    /* Sectietitels & scheiding */
-    .section-title{ font-size: clamp(16px, 1.6vw, 18px); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin:0 0 14px 0 }
-    .section-title::after{ content:""; display:block; width:72px; height:3px; background: var(--accent); border-radius: 2px; margin-top:10px }
-
-    .card{ border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow); background: #101010; }
-
-    /* HERO */
+    /* Hero */
     .hero{
-      position: relative;
-      padding: clamp(40px, 8vw, 96px) clamp(20px, 4vw, 40px);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
+      position:relative; padding:clamp(40px,8vw,96px) clamp(20px,4vw,40px);
+      border:1px solid var(--line); border-radius:var(--radius);
       background:
         radial-gradient(1200px 500px at 10% -20%, rgba(128,0,32,.25), transparent 60%),
         radial-gradient(800px 400px at 90% 120%, rgba(128,0,32,.18), transparent 60%),
         #0e0e0e;
-      box-shadow: var(--shadow);
-      overflow: hidden;
+      box-shadow:var(--shadow); overflow:hidden;
     }
-    .hero h1{ margin: 0 0 8px 0; font-size: clamp(28px, 6vw, 44px); letter-spacing: .3px; }
-    .hero p{ max-width: 80ch; color: var(--muted); margin: 0 0 18px 0; font-size: clamp(16px, 2.4vw, 18px); }
+    .hero h1{ margin:0 0 8px; font-size:clamp(28px,6vw,44px); letter-spacing:.3px }
+    .hero p{ max-width:80ch; color:var(--muted); margin:0 0 18px; font-size:clamp(16px,2.4vw,18px) }
     .hero-cta{
-      display: inline-block; border: 1.5px solid var(--accent); padding: 12px 18px; border-radius: 999px;
-      font-weight: 800; transition: transform .15s ease, background .2s ease, color .2s ease;
+      display:inline-block; border:1.5px solid var(--accent); padding:12px 18px; border-radius:999px;
+      font-weight:800; transition:transform .15s ease, background .2s ease, color .2s ease;
     }
-    .hero-cta:hover{ background: var(--accent); color:#fff; transform: translateY(-1px) }
+    .hero-cta:hover{ background:var(--accent); color:#fff; transform:translateY(-1px) }
 
     /* Intro */
-    .lead{ font-size: clamp(21px, 3vw, 28px); line-height:1.55; letter-spacing:.2px; margin-bottom:8px; }
-    .intro{ display:grid; gap:14px; max-width: 100ch }
+    .lead{ font-size:clamp(21px,3vw,28px); line-height:1.55; letter-spacing:.2px; margin-bottom:8px }
+    .intro{ display:grid; gap:14px; max-width:100ch }
 
     /* Timeline */
-    .timeline{ position:relative; }
-    .t-item{ display:grid; grid-template-columns: 180px 1fr; gap:18px; padding:16px 0; border-top:1px solid var(--line); transition: transform .18s ease, background .2s ease, border-color .2s ease; }
-    .t-item:first-child{ border-top: 0 }
-    .t-when{ color: var(--muted); font-weight:700; }
-    .t-body h3{ margin:0; font-size:18px; color: var(--ink) }
-    /* rol wit, bedrijf bordeaux */
-    .t-body h3 .role{ color: var(--ink); font-weight: 700; }
-    .t-body h3 .company{ color: var(--accent); font-weight: 700; }
-    .t-body p{ margin:6px 0 0; color: var(--muted) }
-    .t-bullets{ margin:10px 0 0; padding-left:18px }
-    .t-bullets li{ margin:6px 0 }
-    .timeline .t-item:hover{ transform: translateY(-2px); background: #131313; border-color: #3a3a3a; }
-    @media (max-width: 680px){ .t-item{ grid-template-columns: 1fr; } }
+    .timeline{ position:relative }
+    .t-item{
+      display:grid; grid-template-columns:180px 1fr; gap:18px; padding:16px 0;
+      border-top:1px solid var(--line); transition: transform .18s ease, background .2s ease, border-color .2s ease;
+    }
+    .t-item:first-child{ border-top:0 }
+    .t-when{ color:var(--muted); font-weight:700 }
+    .t-body h3{ margin:0; font-size:18px; color:var(--ink) }
+    .t-body h3 .role{ color:var(--ink); font-weight:700 }
+    .t-body h3 .company{ color:var(--accent); font-weight:700 }
+    .t-body p{ margin:6px 0 0; color:var(--muted) }
+    .timeline .t-item:hover{ transform:translateY(-2px); background:#131313; border-color:#3a3a3a }
+    @media (max-width:680px){ .t-item{ grid-template-columns:1fr } }
 
     /* Skills */
-    .skills-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:16px; }
-    .skill-box{ border:1px solid var(--line); border-radius: var(--radius); padding:16px; background:#181818; box-shadow: var(--shadow); transition: transform .15s ease }
-    .skill-box:hover{ transform: translateY(-2px) }
-    .skill-box h3{ margin-top:0; font-size:16px; color: var(--accent); }
-    .skill-box ul{ list-style:none; padding:0; margin:0; display:grid; gap:6px; }
-    .skill-box li::before{ content:"• "; color:var(--accent); }
+    .skills-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px }
+    .skill-box{ border:1px solid var(--line); border-radius:var(--radius); padding:16px; background:#181818; box-shadow:var(--shadow); transition:transform .15s ease }
+    .skill-box:hover{ transform:translateY(-2px) }
+    .skill-box h3{ margin-top:0; font-size:16px; color:var(--accent) }
+    .skill-box ul{ list-style:none; padding:0; margin:0; display:grid; gap:6px }
+    .skill-box li::before{ content:"• "; color:var(--accent) }
 
     /* Reveal on scroll */
-    .reveal{ opacity:0; transform: translateY(10px); transition: opacity .5s ease, transform .5s ease }
-    .reveal.show{ opacity:1; transform: translateY(0) }
+    .reveal{ opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease }
+    .reveal.show{ opacity:1; transform:translateY(0) }
 
-    /* Back to top knop */
-    #backToTop {
-      position: fixed; bottom: 20px; right: 20px;
-      background: var(--accent); color: #fff; border: none; border-radius: 50%;
-      width: 44px; height: 44px; font-size: 20px; font-weight: bold; cursor: pointer;
-      box-shadow: var(--shadow); opacity: 0; visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease; z-index: 100;
+    /* Back to top */
+    #backToTop{
+      position:fixed; bottom:20px; right:20px; background:var(--accent); color:#fff; border:none; border-radius:50%;
+      width:44px; height:44px; font-size:20px; font-weight:bold; cursor:pointer; box-shadow:var(--shadow);
+      opacity:0; visibility:hidden; transition:opacity .3s ease, visibility .3s ease, transform .2s ease; z-index:100;
     }
-    #backToTop:hover { transform: translateY(-3px); background: #a0002a; }
-    #backToTop.show { opacity: 1; visibility: visible; }
+    #backToTop:hover{ transform:translateY(-3px); background:#a0002a }
+    #backToTop.show{ opacity:1; visibility:visible }
   </style>
 </head>
 <body>
-  <button class="sidebar-toggle" aria-pressed="false" aria-label="Zijbalk in- of uitklappen">
+  <a href="#hero" class="skip">Direct naar inhoud</a>
+
+  <button class="sidebar-toggle" aria-label="Zijbalk in- of uitklappen" aria-expanded="false">
     <span class="bars"><span></span></span>
     Menu
   </button>
 
   <div class="wrap">
-    <aside>
+    <aside role="complementary">
       <div>
         <div class="brand">
           <h1>Laurens Hagedoorn</h1>
         </div>
         <nav class="nav" aria-label="Hoofdmenu">
-          <a href="#hero"><span></span>Home</a>
-          <a href="#over"><span></span>Over mij</a>
-          <a href="#opleidingen"><span></span>Opleidingen</a>
-          <a href="#werkervaring"><span></span>Werkervaring</a>
-          <a href="#vaardigheden"><span></span>Vaardigheden</a>
-          <a href="#links"><span></span>Links</a>
+          <a href="#hero">Home</a>
+          <a href="#over">Over mij</a>
+          <a href="#opleidingen">Opleidingen</a>
+          <a href="#werkervaring">Werkervaring</a>
+          <a href="#vaardigheden">Vaardigheden</a>
+          <a href="#links">Links</a>
         </nav>
       </div>
       <div>
-        <div class="meta">
+        <div class="meta" aria-label="Contact">
           <div>E-mail: <a href="mailto:lhagedoorn@hotmail.nl">lhagedoorn@hotmail.nl</a></div>
           <div>Tel: <a href="tel:+31637550165">06 37 55 01 65</a></div>
         </div>
       </div>
     </aside>
 
-    <main>
+    <main id="main-content" role="main">
       <!-- HERO -->
-      <section id="hero" class="reveal">
+      <section id="hero" class="reveal" aria-labelledby="hero-title">
         <div class="hero">
-          <h1>Laurens Hagedoorn</h1>
+          <h1 id="hero-title">Laurens Hagedoorn</h1>
           <p>Bezig met de post-bachelor <strong>AA Oriëntatie Accountancy MKB</strong>. Gedreven om mijn expertise in de accountancy voor het MKB verder te ontwikkelen.</p>
           <a href="#werkervaring" class="hero-cta">Bekijk mijn ervaring</a>
         </div>
       </section>
 
       <!-- OVER -->
-      <section id="over" class="reveal">
-        <h2 class="section-title">Over mij</h2>
+      <section id="over" class="reveal" aria-labelledby="over-title">
+        <h2 class="section-title" id="over-title">Over mij</h2>
         <div class="card">
           <div class="intro">
             <p class="lead">Ik ben <strong>Laurens Hagedoorn</strong>, woonachtig in Dronten en momenteel bezig met de post-bachelor <strong>AA Oriëntatie Accountancy MKB</strong> aan de Christelijke Hogeschool Windesheim. Mijn doel is het behalen van de AA-titel en het verder ontwikkelen van mijn expertise in de accountancy voor het MKB.</p>
@@ -209,28 +237,28 @@
       </section>
 
       <!-- OPLEIDINGEN -->
-      <section id="opleidingen" class="reveal">
-        <h2 class="section-title">Opleidingen</h2>
-        <div class="card timeline">
-          <div class="t-item">
+      <section id="opleidingen" class="reveal" aria-labelledby="opl-title">
+        <h2 class="section-title" id="opl-title">Opleidingen</h2>
+        <div class="card timeline" role="list">
+          <div class="t-item" role="listitem">
             <div class="t-when">2024 – heden</div>
             <div class="t-body">
               <h3><span class="role">AA Oriëntatie Accountancy MKB</span> — <span class="company">Christelijke Hogeschool Windesheim</span></h3>
             </div>
           </div>
-          <div class="t-item">
+          <div class="t-item" role="listitem">
             <div class="t-when">2020 – 2024</div>
             <div class="t-body">
               <h3><span class="role">BSc Accountancy</span> — <span class="company">Christelijke Hogeschool Windesheim</span></h3>
             </div>
           </div>
-          <div class="t-item">
+          <div class="t-item" role="listitem">
             <div class="t-when">2017 – 2020</div>
             <div class="t-body">
               <h3><span class="role">Junior Assistent-Accountant (MBO 4)</span> — <span class="company">Landstede</span></h3>
             </div>
           </div>
-          <div class="t-item">
+          <div class="t-item" role="listitem">
             <div class="t-when">2013 – 2017</div>
             <div class="t-body">
               <h3><span class="role">VMBO-TL</span> — <span class="company">RSG Levant</span></h3>
@@ -240,45 +268,45 @@
       </section>
 
       <!-- WERKERVARING -->
-      <section id="werkervaring" class="reveal">
-        <h2 class="section-title">Werkervaring</h2>
-        <div class="card timeline">
-          <div class="t-item">
+      <section id="werkervaring" class="reveal" aria-labelledby="werk-title">
+        <h2 class="section-title" id="werk-title">Werkervaring</h2>
+        <div class="card timeline" role="list">
+          <div class="t-item" role="listitem">
             <div class="t-when">2024 – heden</div>
             <div class="t-body">
               <h3><span class="role">Assistent accountant</span> — <span class="company">Crowe Foederer</span></h3>
               <p>Uitvoeren van samenstelwerkzaamheden; administratieve en financiële werkzaamheden; aangifte omzetbelasting; opstellen van jaarrekeningen (middelgrote ondernemingen); ondersteuning bij de digitale straat; super-user van diverse applicaties.</p>
             </div>
           </div>
-          <div class="t-item">
+          <div class="t-item" role="listitem">
             <div class="t-when">2020 – 2024</div>
             <div class="t-body">
               <h3><span class="role">Werkstudent</span> — <span class="company">Crowe Foederer</span></h3>
               <p>Administratieve en financiële werkzaamheden; samenstellen van jaarrekeningen; aangifte omzetbelasting.</p>
             </div>
           </div>
-          <div class="t-item">
+          <div class="t-item" role="listitem">
             <div class="t-when">2020</div>
             <div class="t-body">
               <h3><span class="role">Stagiair</span> — <span class="company">Crowe Foederer</span></h3>
               <p>Administratieve en financiële werkzaamheden; samenstellen van jaarrekeningen; ondersteuning in de controle.</p>
             </div>
           </div>
-          <div class="t-item">
+          <div class="t-item" role="listitem">
             <div class="t-when">2019 – 2021</div>
             <div class="t-body">
               <h3><span class="role">Retail- en horecamedewerker</span> — <span class="company">Walibi Holland</span></h3>
               <p>Service en ondersteuning; verkoop; winkelpresentatie; kassa; aansturen personeel; keukenwerkzaamheden.</p>
             </div>
           </div>
-          <div class="t-item">
+          <div class="t-item" role="listitem">
             <div class="t-when">2016 – 2021</div>
             <div class="t-body">
               <h3><span class="role">Vakkenvuller / AGF / Kassamedewerker</span> — <span class="company">Albert Heijn</span></h3>
               <p>Voorraadbeheer; leveringen verwerken; kwaliteitscontrole; kassa; aansturen collega’s.</p>
             </div>
           </div>
-          <div class="t-item">
+          <div class="t-item" role="listitem">
             <div class="t-when">2018 – 2019</div>
             <div class="t-body">
               <h3><span class="role">Finance Trainee</span> — <span class="company">Maars Living Walls</span></h3>
@@ -289,10 +317,10 @@
       </section>
 
       <!-- VAARDIGHEDEN -->
-      <section id="vaardigheden" class="reveal">
-        <h2 class="section-title">Vaardigheden</h2>
-        <div class="skills-grid">
-          <div class="skill-box">
+      <section id="vaardigheden" class="reveal" aria-labelledby="vaard-title">
+        <h2 class="section-title" id="vaard-title">Vaardigheden</h2>
+        <div class="skills-grid" role="list">
+          <div class="skill-box" role="listitem">
             <h3>Persoonlijke vaardigheden</h3>
             <ul>
               <li>Accuraat en zorgvuldig</li>
@@ -306,14 +334,14 @@
               <li>Behulpzaam</li>
             </ul>
           </div>
-          <div class="skill-box">
+          <div class="skill-box" role="listitem">
             <h3>Talenkennis</h3>
             <ul>
               <li>Nederlands (Moedertaal)</li>
               <li>Engels (Basiskennis)</li>
             </ul>
           </div>
-          <div class="skill-box">
+          <div class="skill-box" role="listitem">
             <h3>Softwarekennis</h3>
             <ul>
               <li>MS Office</li>
@@ -332,15 +360,15 @@
       </section>
 
       <!-- LINKS -->
-      <section id="links" class="reveal">
-        <h2 class="section-title">Links</h2>
+      <section id="links" class="reveal" aria-labelledby="links-title">
+        <h2 class="section-title" id="links-title">Links</h2>
         <div class="card">
           <p>LinkedIn toevoegen? Stuur je URL, dan zet ik ‘m hier neer.</p>
         </div>
       </section>
 
       <!-- FOOTER -->
-      <footer class="reveal site-footer" id="footer">
+      <footer class="reveal site-footer" id="footer" role="contentinfo" aria-label="Voettekst">
         <div class="card" style="text-align:center;">
           <p style="margin:0;color:var(--muted)">
             © <span id="year"></span> Laurens Hagedoorn •
@@ -349,25 +377,24 @@
         </div>
       </footer>
 
-      <!-- Back to top knop -->
-      <button id="backToTop" aria-label="Terug naar boven">↑</button>
+      <!-- Back to top -->
+      <button id="backToTop" title="Terug naar boven" aria-label="Terug naar boven">↑</button>
     </main>
   </div>
 
   <script>
-    // Sidebar toggle + animatie naar X
+    // Sidebar toggle (met aria) + langzamere animatie
     const btn = document.querySelector('.sidebar-toggle');
     btn.addEventListener('click', () => {
-      const collapsed = document.body.classList.toggle('nav-collapsed');
-      btn.classList.toggle('active', !collapsed);
-      btn.setAttribute('aria-pressed', String(!collapsed));
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      document.body.classList.toggle('nav-collapsed', expanded);
     });
 
-    // Mobiel: start ingeklapt
+    // Start ingeklapt op mobiel
     if (window.innerWidth < 960) {
       document.body.classList.add('nav-collapsed');
-      btn.setAttribute('aria-pressed', 'true');
-      btn.classList.remove('active');
+      btn.setAttribute('aria-expanded', 'false');
     }
 
     // Reveal on scroll
@@ -376,7 +403,7 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // Scrollspy: highlight nav link bij sectie
+    // Scrollspy
     const sections = Array.from(document.querySelectorAll('main section[id]'));
     const navLinks = Array.from(document.querySelectorAll('.nav a'));
     const spyObserver = new IntersectionObserver((entries) => {
@@ -385,7 +412,7 @@
         const id = entry.target.getAttribute('id');
         navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
       });
-    }, { root: null, rootMargin: '0px 0px -40% 0px', threshold: 0.6 });
+    }, { rootMargin: '0px 0px -40% 0px', threshold: 0.6 });
     sections.forEach(sec => spyObserver.observe(sec));
 
     // Footer jaartal
@@ -397,7 +424,7 @@
     window.addEventListener('scroll', () => {
       if (window.scrollY > 300) backToTop.classList.add('show');
       else backToTop.classList.remove('show');
-    });
+    }, { passive: true });
     backToTop.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
