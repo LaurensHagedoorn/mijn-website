@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Laurens Hagedoorn — Portfolio</title>
+  <meta name="description" content="Portfolio van Laurens Hagedoorn: bio, werk, opleiding, vaardigheden en contact." />
+  <link rel="icon" href="images/favicon.png" />
+  <style>
+    :root{
+      --bg: #000000;
+      --ink: #ffffff;
+      --muted: #cccccc;
+      --line: #333333;
+      --accent: #800020;
+      --radius: 12px;
+      --shadow: 0 2px 0 rgba(0,0,0,.5);
+      --maxw: 1100px;
+    }
+    *,*::before,*::after{ box-sizing:border-box }
+    html,body{ margin:0; padding:0 }
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    img{ max-width:100%; display:block; border-radius: var(--radius); border: 3px solid var(--accent); }
+    a{ color: inherit; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+    a:hover{ color: var(--accent) }
+
+    .wrap{ width:min(95%, var(--maxw)); margin:0 auto; display:grid; grid-template-columns: 320px 1fr; gap: 28px; }
+    @media (max-width: 960px){ .wrap{ grid-template-columns: 1fr } }
+
+    aside{
+      position: sticky; top: 0; height: 100dvh; padding: 28px 0; border-right: 1px solid var(--line);
+      display:flex; flex-direction:column; justify-content:space-between; gap:24px;
+      background: var(--bg);
+    }
+    .brand h1{ font-size: clamp(20px, 3.2vw, 28px); margin:0 0 6px 0; letter-spacing: .3px; color: var(--accent) }
+    .nav{ display:flex; flex-direction:column; gap:8px; margin-top:22px }
+    .nav a{ padding:10px 12px; border:1px solid transparent; border-radius: 8px; display:flex; align-items:center; gap:10px }
+    .nav a span{ width:6px; height:6px; border-radius:99px; background: var(--line) }
+    .nav a:hover{ border-color: var(--accent); color: var(--accent) }
+
+    .meta{ display:grid; gap:8px; font-size: 14px; color: var(--muted); border-top:1px solid var(--line); padding-top:16px; }
+    .cta{ display:inline-block; margin-top:12px; border:1.5px solid var(--accent); color: var(--accent); padding:10px 14px; border-radius: 999px; box-shadow: var(--shadow); }
+    .cta:hover{ background: var(--accent); color: #fff }
+
+    main{ padding: 28px 0; }
+    section{ padding: 14px 0 28px }
+    .section-title{ font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin:0 0 8px 0 }
+
+    .card{ border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); background: #111; }
+    .columns{ display:grid; grid-template-columns: 1.2fr .8fr; gap: 18px }
+    @media (max-width: 960px){ .columns{ grid-template-columns:1fr } }
+
+    .lead{ font-size: clamp(19px, 2.6vw, 24px); line-height:1.5; letter-spacing:.2px; margin-bottom:14px; }
+    .intro{ display:grid; gap:12px; max-width:70ch }
+    .highlights{ list-style:none; padding:0; margin:6px 0 0 0; display:grid; gap:8px }
+    .highlights li{ position:relative; padding-left:16px; color:var(--muted) }
+    .highlights li::before{ content:""; position:absolute; left:0; top:.6em; width:8px; height:8px; border-radius:999px; background: var(--accent) }
+
+    .skills-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:16px; }
+    .skill-box{ border:1px solid var(--line); border-radius: var(--radius); padding:16px; background:#181818; box-shadow: var(--shadow); }
+    .skill-box h3{ margin-top:0; font-size:16px; color:var(--accent); }
+    .skill-box ul{ list-style:none; padding:0; margin:0; display:grid; gap:6px; }
+    .skill-box li::before{ content:"• "; color:var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <aside>
+      <div>
+        <div class="brand">
+          <h1>Laurens Hagedoorn</h1>
+        </div>
+        <nav class="nav" aria-label="Hoofdmenu">
+          <a href="#over"><span></span>Over mij</a>
+          <a href="#opleidingen"><span></span>Opleidingen</a>
+          <a href="#vaardigheden"><span></span>Vaardigheden</a>
+          <a href="#links"><span></span>Links</a>
+          <a href="#fotos"><span></span>Foto's</a>
+          <a href="#cv"><span></span>CV</a>
+          <a href="#contact"><span></span>Contact</a>
+        </nav>
+      </div>
+      <div>
+        <div class="meta">
+          <div>E-mail: <a href="mailto:lhagedoorn@hotmail.nl">lhagedoorn@hotmail.nl</a></div>
+          <div>Tel: <a href="tel:+31637550165">06 37 55 01 65</a></div>
+        </div>
+        <a class="cta" href="files/cv.pdf" download>Download CV (PDF)</a>
+      </div>
+    </aside>
+    <main>
+      <section id="over">
+        <h2 class="section-title">Over mij</h2>
+        <div class="card columns">
+          <div class="intro">
+            <p class="lead">Sinds 2020 actief bij <strong>Crowe Foederer</strong> (Lelystad), begonnen als stagiair en inmiddels assistent-accountant FAS. Ik werk aan samenstelopdrachten, jaarrekeningen en btw-aangiften voor MKB-klanten, en help teams slimmer werken via digitalisering en als super-user van diverse applicaties.</p>
+            <ul class="highlights">
+              <li>Samenstelopdrachten & jaarrekeningen (MKB)</li>
+              <li>BTW-aangiften en digitalisering van processen</li>
+              <li>Super-user van diverse applicaties</li>
+              <li>AA-opleiding — Christelijke Hogeschool Windesheim</li>
+            </ul>
+          </div>
+          <figure>
+            <img src="images/Foto.jpg" alt="Portret van Laurens Hagedoorn" />
+          </figure>
+        </div>
+      </section>
+      <section id="opleidingen">
+        <h2 class="section-title">Opleidingen</h2>
+        <div class="card">
+          <ul class="highlights">
+            <li><strong>AA Oriëntatie Accountancy MKB</strong><br>2024 – heden<br>Christelijke Hogeschool Windesheim</li>
+            <li><strong>BSc Accountancy</strong><br>2020 – 2024<br>Christelijke Hogeschool Windesheim</li>
+            <li><strong>Junior Assistent-Accountant (MBO 4)</strong><br>2017 – 2020<br>Landstede</li>
+            <li><strong>VMBO-TL</strong><br>2013 – 2017<br>RSG Levant</li>
+          </ul>
+        </div>
+      </section>
+      <section id="vaardigheden">
+        <h2 class="section-title">Vaardigheden</h2>
+        <div class="skills-grid">
+          <div class="skill-box">
+            <h3>Persoonlijke vaardigheden</h3>
+            <ul>
+              <li>Accuraat en zorgvuldig</li>
+              <li>Representatief</li>
+              <li>Resultaatgericht</li>
+              <li>Leergierig</li>
+              <li>Joviaal</li>
+              <li>Zelfstandig</li>
+              <li>Verantwoordelijkheidsgevoel</li>
+              <li>Loyaal</li>
+              <li>Behulpzaam</li>
+            </ul>
+          </div>
+          <div class="skill-box">
+            <h3>Talenkennis</h3>
+            <ul>
+              <li>Nederlands (Moedertaal)</li>
+              <li>Engels (Basiskennis)</li>
+            </ul>
+          </div>
+          <div class="skill-box">
+            <h3>Softwarekennis</h3>
+            <ul>
+              <li>MS Office</li>
+              <li>Continuous Auditor</li>
+              <li>Exact Online</li>
+              <li>Trifact365</li>
+              <li>Fiscaalgemak</li>
+              <li>Smartbooqing</li>
+              <li>E-boekhouden</li>
+              <li>Multivers</li>
+              <li>Moneybird</li>
+              <li>Visionplanner</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
