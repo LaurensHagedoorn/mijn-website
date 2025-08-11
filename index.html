@@ -8,66 +8,182 @@
   <meta name="theme-color" content="#800020" />
   <link rel="icon" href="images/favicon.png" />
   <link rel="canonical" href="https://<jouwdomein>/" />
+
+  <!-- OG / Twitter -->
   <meta property="og:title" content="Laurens Hagedoorn — Portfolio" />
   <meta property="og:description" content="Assistent-accountancy | AA Oriëntatie Accountancy MKB | Werkervaring, opleidingen en vaardigheden." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="images/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Structured data -->
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Person","name":"Laurens Hagedoorn","email":"mailto:lhagedoorn@hotmail.nl","jobTitle":"Assistent accountancy (MKB)","alumniOf":"Christelijke Hogeschool Windesheim","url":"https://<jouwdomein>/","sameAs":["https://www.linkedin.com/in/<jouw-handle>"]}
   </script>
+
   <style>
-    :root{--bg:#000;--ink:#fff;--muted:#cfc;--line:#2a2a2a;--accent:#800020;--r:14px;--sh:0 4px 16px rgba(0,0,0,.35);--max:1100px}
-    *,*:before,*:after{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
-    a{color:inherit;text-decoration:none;font-weight:700} :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
-    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{transition:none;opacity:1;transform:none}.nav a,.sidebar-toggle,.t-item,.skill-box,aside{transition:none}}
-    .wrap{width:min(95%,var(--max));margin:0 auto;display:grid;grid-template-columns:320px 1fr;gap:32px}
-    @media (max-width:960px){.wrap{grid-template-columns:1fr}}
-    main{padding:28px 0} section{padding:18px 0 36px;scroll-margin-top:16px}
-    .skip{position:absolute;left:-9999px}.skip:focus{left:14px;top:14px;background:#161616;padding:8px 10px;border-radius:8px}
-    aside{position:sticky;top:0;height:100dvh;padding:28px 0;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;gap:24px;background:var(--bg);transition:transform .6s ease,opacity .55s ease}
-    body.nav-collapsed aside{transform:translateX(-110%);opacity:0}
-    .brand h1{margin:0 0 6px;font-size:clamp(22px,3.2vw,30px);letter-spacing:.3px;color:var(--accent)}
-    nav[aria-label="Hoofdmenu"]{display:flex;flex-direction:column;gap:10px;margin-top:22px}
-    .nav a{position:relative;padding:12px 14px;border:1px solid transparent;border-radius:10px;display:flex;align-items:center;font-weight:800;opacity:1;transform:translateX(0);transition:border-color .25s,color .25s,opacity .6s,transform .6s}
-    body:not(.nav-collapsed) .nav a:nth-child(1){transition-delay:.08s} body:not(.nav-collapsed) .nav a:nth-child(2){.16s}
-    body:not(.nav-collapsed) .nav a:nth-child(3){.24s} body:not(.nav-collapsed) .nav a:nth-child(4){.32s}
-    body:not(.nav-collapsed) .nav a:nth-child(5){.40s} body:not(.nav-collapsed) .nav a:nth-child(6){.48s}
-    body.nav-collapsed .nav a{opacity:0;transform:translateX(-12px);transition-delay:0s}
-    .nav a::after{content:"";position:absolute;left:14px;right:14px;bottom:8px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s;border-radius:2px}
-    .nav a:hover{border-color:var(--accent);color:var(--accent)} .nav a:hover::after,.nav a.active::after{transform:scaleX(1)} .nav a.active{border-color:var(--accent);color:var(--accent)}
-    .meta{display:grid;gap:8px;font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
-    .sidebar-toggle{position:fixed;z-index:50;top:14px;left:14px;background:#161616;color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:12px 16px;cursor:pointer;display:flex;align-items:center;gap:10px;box-shadow:var(--sh);transition:background .2s,transform .15s}
-    .sidebar-toggle:hover{transform:translateY(-1px)}
-    .sidebar-toggle .bars{display:inline-block;width:22px;height:16px;position:relative}
-    .sidebar-toggle .bars::before,.sidebar-toggle .bars::after,.sidebar-toggle .bars span{content:"";position:absolute;left:0;right:0;height:2px;background:var(--ink);border-radius:2px;transition:transform .4s,opacity .3s,top .4s,bottom .4s}
-    .sidebar-toggle .bars::before{top:0}.sidebar-toggle .bars span{top:7px}.sidebar-toggle .bars::after{bottom:0}
-    .sidebar-toggle[aria-expanded="true"] .bars::before{transform:rotate(45deg);top:7px}
-    .sidebar-toggle[aria-expanded="true"] .bars span{opacity:0}
-    .sidebar-toggle[aria-expanded="true"] .bars::after{transform:rotate(-45deg);bottom:7px}
-    .card{border:1px solid var(--line);border-radius:var(--r);padding:26px;box-shadow:var(--sh);background:#101010}
-    .section-title{font-size:clamp(16px,1.6vw,18px);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
-    .section-title::after{content:"";display:block;width:72px;height:3px;background:var(--accent);border-radius:2px;margin-top:10px}
-    .hero{position:relative;padding:clamp(40px,8vw,96px) clamp(20px,4vw,40px);border:1px solid var(--line);border-radius:var(--r);background:radial-gradient(1200px 500px at 10% -20%,rgba(128,0,32,.25),transparent 60%),radial-gradient(800px 400px at 90% 120%,rgba(128,0,32,.18),transparent 60%),#0e0e0e;box-shadow:var(--sh)}
-    .hero h1{margin:0 0 8px;font-size:clamp(28px,6vw,44px)} .hero p{max-width:80ch;color:var(--muted);margin:0 0 18px}
-    .hero-cta{display:inline-block;border:1.5px solid var(--accent);padding:12px 18px;border-radius:999px;font-weight:800;transition:transform .15s,background .2s,color .2s}
-    .hero-cta:hover{background:var(--accent);color:#fff;transform:translateY(-1px)}
-    .lead{font-size:clamp(21px,3vw,28px);line-height:1.55;letter-spacing:.2px;margin-bottom:8px}
-    .intro{display:grid;gap:14px;max-width:100ch}
-    .timeline .t-item{display:grid;grid-template-columns:180px 1fr;gap:18px;padding:16px 0;border-top:1px solid var(--line);transition:transform .18s,background .2s,border-color .2s}
-    .timeline .t-item:first-child{border-top:0} .t-when{color:var(--muted);font-weight:700}
-    .t-body h3{margin:0;font-size:18px} .t-body .role{color:var(--ink);font-weight:700} .t-body .company{color:var(--accent);font-weight:700}
-    .t-body p{margin:6px 0 0;color:var(--muted)} .timeline .t-item:hover{transform:translateY(-2px);background:#131313;border-color:#3a3a3a}
-    @media (max-width:680px){.timeline .t-item{grid-template-columns:1fr}}
-    .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
-    .skill-box{border:1px solid var(--line);border-radius:var(--r);padding:16px;background:#181818;box-shadow:var(--sh);transition:transform .15s}
-    .skill-box:hover{transform:translateY(-2px)} .skill-box h3{margin:0 0 8px;font-size:16px;color:var(--accent)}
-    .skill-box ul{list-style:none;padding:0;margin:0;display:grid;gap:6px} .skill-box li::before{content:"• ";color:var(--accent)}
-    .reveal{opacity:0;transform:translateY(10px);transition:opacity .5s,transform .5s} .reveal.show{opacity:1;transform:translateY(0)}
-    #backToTop{position:fixed;bottom:20px;right:20px;background:var(--accent);color:#fff;border:none;border-radius:50%;width:44px;height:44px;font-size:20px;font-weight:bold;cursor:pointer;box-shadow:var(--sh);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s,transform .2s;z-index:100}
-    #backToTop:hover{transform:translateY(-3px);background:#a0002a} #backToTop.show{opacity:1;visibility:visible}
-    @media print{.sidebar-toggle,#backToTop{display:none!important} aside{display:none}.wrap{grid-template-columns:1fr} body{color:#000;background:#fff} .card{border-color:#ddd;box-shadow:none} a{color:#000;text-decoration:underline;font-weight:normal}}
+    :root{
+      --bg:#000000;
+      --ink:#ffffff;    /* ALLE tekst wit */
+      --muted:#ffffff;  /* ook secundaire tekst wit, zoals gevraagd */
+      --line:#2a2a2a;
+      --accent:#800020; /* bordeauxrood als accent (geen tekstkleur) */
+      --r:14px;
+      --sh:0 4px 16px rgba(0,0,0,.35);
+      --max:1100px;
+    }
+
+    *,*::before,*::after{ box-sizing:border-box }
+    html{ scroll-behavior:smooth }
+    body{
+      margin:0; background:var(--bg); color:var(--ink);
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      line-height:1.65; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    a{ color:inherit; text-decoration:none; font-weight:700 }
+
+    /* Toegankelijkheid */
+    :focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:6px }
+    @media (prefers-reduced-motion:reduce){
+      html{ scroll-behavior:auto }
+      .reveal{ transition:none; opacity:1; transform:none }
+      .nav a,.sidebar-toggle,.t-item,.skill-box,aside{ transition:none }
+    }
+
+    /* Layout */
+    .wrap{ width:min(95%,var(--max)); margin:0 auto; display:grid; grid-template-columns:320px 1fr; gap:32px }
+    @media (max-width:960px){ .wrap{ grid-template-columns:1fr } }
+    main{ padding:28px 0 }
+    section{ padding:18px 0 36px; scroll-margin-top:16px }
+
+    /* Skip link */
+    .skip{ position:absolute; left:-9999px; top:auto }
+    .skip:focus{ left:14px; top:14px; background:#161616; padding:8px 10px; border-radius:8px }
+
+    /* Sidebar */
+    aside{
+      position:sticky; top:0; height:100dvh; padding:28px 0; border-right:1px solid var(--line);
+      display:flex; flex-direction:column; justify-content:space-between; gap:24px; background:var(--bg);
+      transition:transform .6s ease, opacity .55s ease;
+    }
+    body.nav-collapsed aside{ transform:translateX(-110%); opacity:0 }
+
+    .brand h1{ margin:0 0 6px; font-size:clamp(22px,3.2vw,30px); letter-spacing:.3px; color:var(--ink) }
+
+    /* Navigatie (tekst blijft wit) */
+    nav[aria-label="Hoofdmenu"]{ display:flex; flex-direction:column; gap:10px; margin-top:22px }
+    .nav a{
+      position:relative; padding:12px 14px; border:1px solid transparent; border-radius:10px;
+      display:flex; align-items:center; gap:10px; font-weight:800; color:var(--ink);
+      opacity:1; transform:translateX(0); transition:border-color .25s,color .25s,opacity .6s,transform .6s;
+    }
+    body:not(.nav-collapsed) .nav a:nth-child(1){ transition-delay:.08s }
+    body:not(.nav-collapsed) .nav a:nth-child(2){ transition-delay:.16s }
+    body:not(.nav-collapsed) .nav a:nth-child(3){ transition-delay:.24s }
+    body:not(.nav-collapsed) .nav a:nth-child(4){ transition-delay:.32s }
+    body:not(.nav-collapsed) .nav a:nth-child(5){ transition-delay:.40s }
+    body:not(.nav-collapsed) .nav a:nth-child(6){ transition-delay:.48s }
+    body.nav-collapsed .nav a{ opacity:0; transform:translateX(-12px); transition-delay:0s }
+
+    /* Onderlijning/active alleen in bordeaux; tekst blijft wit */
+    .nav a::after{
+      content:""; position:absolute; left:14px; right:14px; bottom:8px; height:2px; background:var(--accent);
+      transform:scaleX(0); transform-origin:left; transition:transform .3s; border-radius:2px
+    }
+    .nav a:hover{ border-color:var(--accent) }         /* géén rode tekst */
+    .nav a:hover::after{ transform:scaleX(1) }
+    .nav a.active{ border-color:var(--accent); color:var(--ink) } /* tekst wit */
+    .nav a.active::after{ transform:scaleX(1) }
+
+    .meta{ display:grid; gap:8px; font-size:14px; color:var(--ink); border-top:1px solid var(--line); padding-top:16px }
+
+    /* Toggle knop */
+    .sidebar-toggle{
+      position:fixed; z-index:50; top:14px; left:14px; background:#161616; color:var(--ink);
+      border:1px solid var(--line); border-radius:12px; padding:12px 16px; cursor:pointer;
+      display:flex; align-items:center; gap:10px; box-shadow:var(--sh); transition:background .2s,transform .15s;
+    }
+    .sidebar-toggle:hover{ transform:translateY(-1px) }
+    .sidebar-toggle .bars{ display:inline-block; width:22px; height:16px; position:relative }
+    .sidebar-toggle .bars::before,.sidebar-toggle .bars::after,.sidebar-toggle .bars span{
+      content:""; position:absolute; left:0; right:0; height:2px; background:var(--ink); border-radius:2px;
+      transition:transform .4s, opacity .3s, top .4s, bottom .4s
+    }
+    .sidebar-toggle .bars::before{ top:0 } .sidebar-toggle .bars span{ top:7px } .sidebar-toggle .bars::after{ bottom:0 }
+    .sidebar-toggle[aria-expanded="true"] .bars::before{ transform:rotate(45deg); top:7px }
+    .sidebar-toggle[aria-expanded="true"] .bars span{ opacity:0 }
+    .sidebar-toggle[aria-expanded="true"] .bars::after{ transform:rotate(-45deg); bottom:7px }
+
+    /* Kaarten & titels (tekst wit) */
+    .card{ border:1px solid var(--line); border-radius:var(--r); padding:26px; box-shadow:var(--sh); background:#101010 }
+    .section-title{ font-size:clamp(16px,1.6vw,18px); letter-spacing:.14em; text-transform:uppercase; color:var(--ink); margin:0 0 14px }
+    .section-title::after{ content:""; display:block; width:72px; height:3px; background:var(--accent); border-radius:2px; margin-top:10px }
+
+    /* Hero */
+    .hero{
+      position:relative; padding:clamp(40px,8vw,96px) clamp(20px,4vw,40px);
+      border:1px solid var(--line); border-radius:var(--r);
+      background:
+        radial-gradient(1200px 500px at 10% -20%, rgba(128,0,32,.25), transparent 60%),
+        radial-gradient(800px 400px at 90% 120%, rgba(128,0,32,.18), transparent 60%),
+        #0e0e0e;
+      box-shadow:var(--sh); overflow:hidden;
+    }
+    .hero h1{ margin:0 0 8px; font-size:clamp(28px,6vw,44px); color:var(--ink) }
+    .hero p{ max-width:80ch; color:var(--ink); margin:0 0 18px }
+    .hero-cta{
+      display:inline-block; border:1.5px solid var(--accent); padding:12px 18px; border-radius:999px;
+      font-weight:800; transition:transform .15s, background .2s, color .2s; color:var(--ink);
+    }
+    .hero-cta:hover{ background:var(--accent); color:#fff; transform:translateY(-1px) }
+
+    /* Intro */
+    .lead{ font-size:clamp(21px,3vw,28px); line-height:1.55; letter-spacing:.2px; margin-bottom:8px }
+    .intro{ display:grid; gap:14px; max-width:100ch }
+
+    /* Timeline */
+    .timeline{ position:relative }
+    .t-item{
+      display:grid; grid-template-columns:180px 1fr; gap:18px; padding:16px 0;
+      border-top:1px solid var(--line); transition:transform .18s, background .2s, border-color .2s;
+    }
+    .t-item:first-child{ border-top:0 }
+    .t-when{ color:var(--ink); font-weight:700 }
+    .t-body h3{ margin:0; font-size:18px; color:var(--ink) }
+    .t-body .role{ color:var(--ink); font-weight:700 }
+    .t-body .company{ color:var(--ink); font-weight:700 } /* ook bedrijfsnaam wit zoals gevraagd */
+    .t-body p{ margin:6px 0 0; color:var(--ink) }
+    .timeline .t-item:hover{ transform:translateY(-2px); background:#131313; border-color:#3a3a3a }
+    @media (max-width:680px){ .t-item{ grid-template-columns:1fr } }
+
+    /* Skills */
+    .skills-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px }
+    .skill-box{ border:1px solid var(--line); border-radius:var(--r); padding:16px; background:#181818; box-shadow:var(--sh); transition:transform .15s }
+    .skill-box:hover{ transform:translateY(-2px) }
+    .skill-box h3{ margin:0 0 8px; font-size:16px; color:var(--ink) }
+    .skill-box ul{ list-style:none; padding:0; margin:0; display:grid; gap:6px }
+    .skill-box li::before{ content:"• "; color:var(--accent) } /* bullets bordeaux, tekst wit */
+
+    /* Reveal */
+    .reveal{ opacity:0; transform:translateY(10px); transition:opacity .5s, transform .5s }
+    .reveal.show{ opacity:1; transform:translateY(0) }
+
+    /* Back-to-top */
+    #backToTop{
+      position:fixed; bottom:20px; right:20px; background:var(--accent); color:#fff; border:none; border-radius:50%;
+      width:44px; height:44px; font-size:20px; font-weight:bold; cursor:pointer; box-shadow:var(--sh);
+      opacity:0; visibility:hidden; transition:opacity .3s, visibility .3s, transform .2s; z-index:100;
+    }
+    #backToTop:hover{ transform:translateY(-3px); background:#a0002a }
+    #backToTop.show{ opacity:1; visibility:visible }
+
+    /* Print */
+    @media print{
+      .sidebar-toggle,#backToTop{ display:none !important }
+      aside{ display:none } .wrap{ grid-template-columns:1fr }
+      body{ color:#000; background:#fff } .card{ border-color:#ddd; box-shadow:none }
+      a{ color:#000; text-decoration:underline; font-weight:normal }
+    }
   </style>
 </head>
 <body>
@@ -97,6 +213,7 @@
     </aside>
 
     <main role="main">
+      <!-- HERO -->
       <section id="hero" class="reveal" aria-labelledby="hero-title">
         <div class="hero">
           <h1 id="hero-title">Laurens Hagedoorn</h1>
@@ -105,6 +222,7 @@
         </div>
       </section>
 
+      <!-- OVER -->
       <section id="over" class="reveal">
         <h2 class="section-title">Over mij</h2>
         <div class="card">
@@ -115,6 +233,7 @@
         </div>
       </section>
 
+      <!-- OPLEIDINGEN -->
       <section id="opleidingen" class="reveal">
         <h2 class="section-title">Opleidingen</h2>
         <div class="card timeline">
@@ -137,6 +256,7 @@
         </div>
       </section>
 
+      <!-- WERKERVARING -->
       <section id="werkervaring" class="reveal">
         <h2 class="section-title">Werkervaring</h2>
         <div class="card timeline">
@@ -179,6 +299,7 @@
         </div>
       </section>
 
+      <!-- VAARDIGHEDEN -->
       <section id="vaardigheden" class="reveal">
         <h2 class="section-title">Vaardigheden</h2>
         <div class="skills-grid">
@@ -197,14 +318,16 @@
         </div>
       </section>
 
+      <!-- LINKS -->
       <section id="links" class="reveal">
         <h2 class="section-title">Links</h2>
         <div class="card"><p>LinkedIn toevoegen? Stuur je URL, dan zet ik ‘m hier neer.</p></div>
       </section>
 
+      <!-- FOOTER -->
       <footer class="reveal site-footer" id="footer" role="contentinfo">
         <div class="card" style="text-align:center;">
-          <p style="margin:0;color:var(--muted)">© <span id="year"></span> Laurens Hagedoorn • <a href="mailto:lhagedoorn@hotmail.nl" style="font-weight:700">lhagedoorn@hotmail.nl</a></p>
+          <p style="margin:0;color:var(--ink)">© <span id="year"></span> Laurens Hagedoorn • <a href="mailto:lhagedoorn@hotmail.nl" style="font-weight:700">lhagedoorn@hotmail.nl</a></p>
         </div>
       </footer>
 
@@ -213,33 +336,55 @@
   </div>
 
   <script>
+    // Sidebar toggle
     const btn = document.querySelector('.sidebar-toggle');
     btn.addEventListener('click', () => {
-      const ex = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!ex));
-      document.body.classList.toggle('nav-collapsed', ex);
+      const exp = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!exp));
+      document.body.classList.toggle('nav-collapsed', exp);
     });
-    if (window.innerWidth < 960) { document.body.classList.add('nav-collapsed'); btn.setAttribute('aria-expanded','false'); }
+    if (window.innerWidth < 960) {
+      document.body.classList.add('nav-collapsed');
+      btn.setAttribute('aria-expanded','false');
+    }
 
-    const revealObs = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('show')), {threshold:0.1});
-    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+    // Reveal on scroll
+    const revealObs = new IntersectionObserver((es)=>es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); }),{threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(el=>revealObs.observe(el));
 
+    // SCROLLSPY (fix voor “menu blijft rood”)
     const sections = [...document.querySelectorAll('main section[id]')];
     const links = [...document.querySelectorAll('.nav a')];
-    const spyObs = new IntersectionObserver(es => es.forEach(en => {
-      if(!en.isIntersecting) return;
-      const id = en.target.id;
-      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#'+id));
-    }), {rootMargin:'0px 0px -40% 0px', threshold:0.6});
-    sections.forEach(s => spyObs.observe(s));
 
+    function updateActive(){
+      const scrollPos = window.scrollY + 100; // offset
+      let currentId = sections[0].id;
+      for(const sec of sections){
+        const top = sec.offsetTop;
+        const bottom = top + sec.offsetHeight;
+        if(scrollPos >= top && scrollPos < bottom){ currentId = sec.id; break; }
+      }
+      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + currentId));
+    }
+    updateActive();
+    window.addEventListener('scroll', ()=>{ requestAnimationFrame(updateActive); }, {passive:true});
+    window.addEventListener('resize', ()=>{ requestAnimationFrame(updateActive); });
+
+    // Klik op menu: direct active zetten (en smooth scroll doet de rest)
+    links.forEach(a => a.addEventListener('click', () => {
+      links.forEach(x => x.classList.remove('active'));
+      a.classList.add('active');
+    }));
+
+    // Footer jaartal
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Back-to-top
     const backToTop = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
       (window.scrollY > 300) ? backToTop.classList.add('show') : backToTop.classList.remove('show');
     }, {passive:true});
-    backToTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
 </body>
 </html>
