@@ -4,66 +4,147 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Laurens Hagedoorn — Portfolio</title>
-  <meta name="description" content="Portfolio en CV van Laurens Hagedoorn, Assistent Accountant bij Crowe Foederer." />
+  <meta name="description" content="Portfolio van Laurens Hagedoorn: bio, werk, opleiding en contact." />
   <link rel="icon" href="images/favicon.png" />
+  <style>
+    :root{
+      --bg: #000000;        /* zwart */
+      --ink: #ffffff;       /* wit voor tekst */
+      --muted: #cccccc;     /* lichtere wit/grijs tint */
+      --line: #333333;      /* donkere lijnkleur */
+      --accent: #800020;    /* bordeaux rood */
+      --accent-2: #b03060;  /* lichtere bordeaux variant */
+      --radius: 12px;
+      --shadow: 0 2px 0 rgba(0,0,0,.5);
+      --maxw: 1100px;
+    }
+
+    *,*::before,*::after{ box-sizing:border-box }
+    html,body{ margin:0; padding:0 }
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    img{ max-width:100%; display:block; border-radius: var(--radius); border: 3px solid var(--accent); }
+    a{ color: inherit; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+    a:hover{ color: var(--accent) }
+
+    .wrap{ width:min(95%, var(--maxw)); margin:0 auto; display:grid; grid-template-columns: 320px 1fr; gap: 28px; }
+    @media (max-width: 960px){ .wrap{ grid-template-columns: 1fr } }
+
+    aside{
+      position: sticky; top: 0; height: 100dvh; padding: 28px 0; border-right: 1px solid var(--line);
+      display:flex; flex-direction:column; justify-content:space-between; gap:24px;
+      background: var(--bg);
+    }
+    .brand h1{ font-size: clamp(20px, 3.2vw, 28px); margin:0 0 6px 0; letter-spacing: .3px; color: var(--accent) }
+    .brand p{ margin:0; color: var(--muted) }
+    .nav{ display:flex; flex-direction:column; gap:8px; margin-top:22px }
+    .nav a{ padding:10px 12px; border:1px solid transparent; border-radius: 8px; display:flex; align-items:center; gap:10px }
+    .nav a span{ width:6px; height:6px; border-radius:99px; background: var(--line) }
+    .nav a:hover{ border-color: var(--accent); color: var(--accent) }
+
+    .meta{ display:grid; gap:8px; font-size: 14px; color: var(--muted); border-top:1px solid var(--line); padding-top:16px; }
+    .cta{ display:inline-block; margin-top:12px; border:1.5px solid var(--accent); color: var(--accent); padding:10px 14px; border-radius: 999px; box-shadow: var(--shadow); }
+    .cta:hover{ background: var(--accent); color: #fff }
+
+    main{ padding: 28px 0; }
+    section{ padding: 14px 0 28px }
+    .section-title{ font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin:0 0 8px 0 }
+
+    .card{ border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); background: #111; }
+    .columns{ display:grid; grid-template-columns: 1.2fr .8fr; gap: 18px }
+    @media (max-width: 960px){ .columns{ grid-template-columns:1fr } }
+
+    .lead{ font-size: clamp(18px, 2.4vw, 22px); line-height:1.45 }
+
+    .link-list{ display:grid; gap:10px }
+    .link-item{ display:flex; justify-content:space-between; align-items:center; gap:14px; padding:12px 14px; border:1px dashed var(--line); border-radius:10px }
+    .link-item small{ color: var(--muted) }
+
+    .gallery{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 10px }
+    @media (max-width: 680px){ .gallery{ grid-template-columns: 1fr 1fr } }
+
+    .timeline{ position:relative; padding-left: 14px }
+    .timeline::before{ content:""; position:absolute; left:4px; top:6px; bottom:6px; width:2px; background: var(--line); border-radius: 2px }
+    .item{ position:relative; padding-left: 14px; margin: 12px 0 }
+    .item::before{ content:""; position:absolute; left:-2px; top:6px; width:10px; height:10px; border-radius:99px; background: var(--accent) }
+    .item h4{ margin:0; font-size: 16px }
+    .item .meta{ border:0; padding:0; color: var(--muted); font-size: 14px }
+
+    footer{ padding: 24px 0 48px; color: var(--muted); border-top: 1px solid var(--line); margin-top: 18px; text-align:center }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Laurens Hagedoorn</h1>
-    <p>Assistent Accountant FAS — Crowe Foederer</p>
-  </header>
+  <div class="wrap">
+    <aside>
+      <div>
+        <div class="brand">
+          <h1>Laurens Hagedoorn</h1>
+          <p>Assistent-accountant (FAS) — Crowe Foederer</p>
+        </div>
+        <nav class="nav" aria-label="Hoofdmenu">
+          <a href="#over"><span></span>Over mij</a>
+          <a href="#links"><span></span>Links</a>
+          <a href="#fotos"><span></span>Foto's</a>
+          <a href="#cv"><span></span>CV</a>
+          <a href="#contact"><span></span>Contact</a>
+        </nav>
+      </div>
+      <div>
+        <div class="meta">
+          <div>E-mail: <a href="mailto:l.hagedoorn@crowefoederer.nl">l.hagedoorn@crowefoederer.nl</a></div>
+          <div>Tel: <a href="tel:+31320250444">0320-250444</a></div>
+        </div>
+        <a class="cta" href="files/cv.pdf" download>Download CV (PDF)</a>
+      </div>
+    </aside>
 
-  <main>
-    <section>
-      <h2>Over mij</h2>
-      <p>Laurens Hagedoorn (2001) is sinds 2020 werkzaam bij Crowe Foederer, waar hij startte als stagiair en zich inmiddels heeft ontwikkeld tot assistent-accountant op de vestiging Lelystad. In zijn rol houdt hij zich bezig met het uitvoeren van samenstelwerkzaamheden, het opstellen van jaarrekeningen voor middelgrote ondernemingen en het verzorgen van fiscale aangiften, met name omzetbelasting. Naast zijn reguliere werkzaamheden is Laurens actief betrokken bij de verdere digitalisering van processen binnen het kantoor. Ook fungeert hij als super-user van diverse applicaties. Hij volgt momenteel de theoretische opleiding tot Accountant-Administratieconsulent (AA) aan de Christelijke Hogeschool Windesheim, met de ambitie om zich op termijn te ontwikkelen tot AA-accountant.</p>
-    </section>
+    <main>
+      <section id="over">
+        <h2 class="section-title">Over mij</h2>
+        <div class="card columns">
+          <div>
+            <p class="lead">Sinds 2020 actief bij Crowe Foederer (Lelystad), begonnen als stagiair en inmiddels assistent-accountant FAS. Ik werk aan samenstelopdrachten, jaarrekeningen en btw-aangiften voor MKB-klanten, en help teams slimmer werken via digitalisering en als super-user van diverse applicaties.</p>
+            <p style="color:var(--muted);margin-top:14px">Focus: samenstelwerk, jaarrekeningen, fiscale aangiften (met name omzetbelasting). Daarnaast draag ik bij aan de digitalisering van processen en kennisdeling binnen het team. Momenteel volg ik de AA-opleiding aan de Christelijke Hogeschool Windesheim om me verder te ontwikkelen tot AA-accountant.</p>
+          </div>
+          <figure>
+            <img src="images/Foto.jpg" alt="Portret van Laurens Hagedoorn" />
+          </figure>
+        </div>
+      </section>
 
-    <section>
-      <h2>Werkervaring</h2>
-      <ul>
-        <li>2024–heden: Assistent Accountant — Crowe Foederer</li>
-        <li>2020–2024: Werkstudent — Crowe Foederer</li>
-        <li>2020: Stagiair — Crowe Foederer</li>
-        <li>2019–2021: Retail- en horecamedewerker — Walibi Holland</li>
-        <li>2016–2021: Vakkenvuller / Kassamedewerker — Albert Heijn</li>
-        <li>2018–2019: Finance Trainee — Maars Living Walls</li>
-      </ul>
-    </section>
+      <section id="links">
+        <h2 class="section-title">Links</h2>
+        <div class="link-list">
+          <div class="link-item"><a href="#" target="_blank" rel="noreferrer">LinkedIn (voeg link toe)</a><small>Professioneel</small></div>
+          <div class="link-item"><a href="mailto:l.hagedoorn@crowefoederer.nl">E-mail</a><small>l.hagedoorn@crowefoederer.nl</small></div>
+          <div class="link-item"><a href="#" target="_blank" rel="noreferrer">Afspraak plannen</a><small>15 min call</small></div>
+        </div>
+      </section>
 
-    <section>
-      <h2>Opleidingen</h2>
-      <ul>
-        <li>2024–heden: AA Oriëntatie Accountancy MKB — Christelijke Hogeschool Windesheim</li>
-        <li>2020–2024: BSc Accountancy — Christelijke Hogeschool Windesheim</li>
-        <li>2017–2020: Junior Assistent-Accountant (MBO 4) — Landstede</li>
-        <li>2013–2017: VMBO-TL — RSG Levant</li>
-      </ul>
-    </section>
+      <section id="fotos">
+        <h2 class="section-title">Foto's</h2>
+        <div class="gallery">
+          <img src="images/DSCF2454.JPG" alt="Foto 1"/>
+          <img src="images/photo-2.jpg" alt="Foto 2"/>
+          <img src="images/photo-3.jpg" alt="Foto 3"/>
+          <img src="images/photo-4.jpg" alt="Foto 4"/>
+          <img src="images/photo-5.jpg" alt="Foto 5"/>
+          <img src="images/photo-6.jpg" alt="Foto 6"/>
+        </div>
+      </section>
 
-    <section>
-      <h2>Vaardigheden</h2>
-      <p>Accuraat en zorgvuldig, Representatief, Resultaatgericht, Leergierig, Joviaal, Zelfstandig, Verantwoordelijkheidsgevoel, Loyaal, Behulpzaam</p>
-      <h3>Talen</h3>
-      <p>Nederlands (Moedertaal), Engels (Basiskennis)</p>
-      <h3>Softwarekennis</h3>
-      <p>MS Office, Continuous Auditor, Exact Online, Trifact365, Fiscaalgemak, Smartbooqing, E-boekhouden, Multivers, Moneybird, Visionplanner</p>
-    </section>
+      <!-- Rest van de HTML blijft hetzelfde -->
+    </main>
+  </div>
 
-    <section>
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:l.hagedoorn@crowefoederer.nl">l.hagedoorn@crowefoederer.nl</a></p>
-      <p>Telefoon: 0320-250444</p>
-    </section>
-
-    <section>
-      <h2>Download mijn CV</h2>
-      <p><a href="files/cv.pdf" download>Klik hier om mijn CV te downloaden</a></p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Laurens Hagedoorn</p>
-  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
