@@ -4,21 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Laurens Hagedoorn — Portfolio</title>
-  <meta name="description" content="Portfolio van Laurens Hagedoorn: bio, werk, opleiding en contact." />
+  <meta name="description" content="Portfolio van Laurens Hagedoorn: bio, werk, opleiding, vaardigheden en contact." />
   <link rel="icon" href="images/favicon.png" />
   <style>
     :root{
-      --bg: #000000;        /* zwart */
-      --ink: #ffffff;       /* wit voor tekst */
-      --muted: #cccccc;     /* lichtere wit/grijs tint */
-      --line: #333333;      /* donkere lijnkleur */
-      --accent: #800020;    /* bordeaux rood */
-      --accent-2: #b03060;  /* lichtere bordeaux variant */
+      --bg: #000000;
+      --ink: #ffffff;
+      --muted: #cccccc;
+      --line: #333333;
+      --accent: #800020;
       --radius: 12px;
       --shadow: 0 2px 0 rgba(0,0,0,.5);
       --maxw: 1100px;
     }
-
     *,*::before,*::after{ box-sizing:border-box }
     html,body{ margin:0; padding:0 }
     body{
@@ -42,7 +40,6 @@
       background: var(--bg);
     }
     .brand h1{ font-size: clamp(20px, 3.2vw, 28px); margin:0 0 6px 0; letter-spacing: .3px; color: var(--accent) }
-    .brand p{ margin:0; color: var(--muted) }
     .nav{ display:flex; flex-direction:column; gap:8px; margin-top:22px }
     .nav a{ padding:10px 12px; border:1px solid transparent; border-radius: 8px; display:flex; align-items:center; gap:10px }
     .nav a span{ width:6px; height:6px; border-radius:99px; background: var(--line) }
@@ -56,27 +53,21 @@
     section{ padding: 14px 0 28px }
     .section-title{ font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin:0 0 8px 0 }
 
-    .card{ border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); background: #111; }
+    .card{ border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); background: #111; }
     .columns{ display:grid; grid-template-columns: 1.2fr .8fr; gap: 18px }
     @media (max-width: 960px){ .columns{ grid-template-columns:1fr } }
 
-    .lead{ font-size: clamp(18px, 2.4vw, 22px); line-height:1.45 }
+    .lead{ font-size: clamp(19px, 2.6vw, 24px); line-height:1.5; letter-spacing:.2px; margin-bottom:14px; }
+    .intro{ display:grid; gap:12px; max-width:70ch }
+    .highlights{ list-style:none; padding:0; margin:6px 0 0 0; display:grid; gap:8px }
+    .highlights li{ position:relative; padding-left:16px; color:var(--muted) }
+    .highlights li::before{ content:""; position:absolute; left:0; top:.6em; width:8px; height:8px; border-radius:999px; background: var(--accent) }
 
-    .link-list{ display:grid; gap:10px }
-    .link-item{ display:flex; justify-content:space-between; align-items:center; gap:14px; padding:12px 14px; border:1px dashed var(--line); border-radius:10px }
-    .link-item small{ color: var(--muted) }
-
-    .gallery{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 10px }
-    @media (max-width: 680px){ .gallery{ grid-template-columns: 1fr 1fr } }
-
-    .timeline{ position:relative; padding-left: 14px }
-    .timeline::before{ content:""; position:absolute; left:4px; top:6px; bottom:6px; width:2px; background: var(--line); border-radius: 2px }
-    .item{ position:relative; padding-left: 14px; margin: 12px 0 }
-    .item::before{ content:""; position:absolute; left:-2px; top:6px; width:10px; height:10px; border-radius:99px; background: var(--accent) }
-    .item h4{ margin:0; font-size: 16px }
-    .item .meta{ border:0; padding:0; color: var(--muted); font-size: 14px }
-
-    footer{ padding: 24px 0 48px; color: var(--muted); border-top: 1px solid var(--line); margin-top: 18px; text-align:center }
+    .skills-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:16px; }
+    .skill-box{ border:1px solid var(--line); border-radius: var(--radius); padding:16px; background:#181818; box-shadow: var(--shadow); }
+    .skill-box h3{ margin-top:0; font-size:16px; color:var(--accent); }
+    .skill-box ul{ list-style:none; padding:0; margin:0; display:grid; gap:6px; }
+    .skill-box li::before{ content:"• "; color:var(--accent); }
   </style>
 </head>
 <body>
@@ -85,10 +76,11 @@
       <div>
         <div class="brand">
           <h1>Laurens Hagedoorn</h1>
-          <p>Assistent-accountant (FAS) — Crowe Foederer</p>
         </div>
         <nav class="nav" aria-label="Hoofdmenu">
           <a href="#over"><span></span>Over mij</a>
+          <a href="#opleidingen"><span></span>Opleidingen</a>
+          <a href="#vaardigheden"><span></span>Vaardigheden</a>
           <a href="#links"><span></span>Links</a>
           <a href="#fotos"><span></span>Foto's</a>
           <a href="#cv"><span></span>CV</a>
@@ -97,54 +89,83 @@
       </div>
       <div>
         <div class="meta">
-          <div>E-mail: <a href="mailto:l.hagedoorn@crowefoederer.nl">l.hagedoorn@crowefoederer.nl</a></div>
-          <div>Tel: <a href="tel:+31320250444">0320-250444</a></div>
+          <div>E-mail: <a href="mailto:lhagedoorn@hotmail.nl">lhagedoorn@hotmail.nl</a></div>
+          <div>Tel: <a href="tel:+31637550165">06 37 55 01 65</a></div>
         </div>
         <a class="cta" href="files/cv.pdf" download>Download CV (PDF)</a>
       </div>
     </aside>
-
     <main>
       <section id="over">
         <h2 class="section-title">Over mij</h2>
         <div class="card columns">
-          <div>
-            <p class="lead">Sinds 2020 actief bij Crowe Foederer (Lelystad), begonnen als stagiair en inmiddels assistent-accountant FAS. Ik werk aan samenstelopdrachten, jaarrekeningen en btw-aangiften voor MKB-klanten, en help teams slimmer werken via digitalisering en als super-user van diverse applicaties.</p>
-            <p style="color:var(--muted);margin-top:14px">Focus: samenstelwerk, jaarrekeningen, fiscale aangiften (met name omzetbelasting). Daarnaast draag ik bij aan de digitalisering van processen en kennisdeling binnen het team. Momenteel volg ik de AA-opleiding aan de Christelijke Hogeschool Windesheim om me verder te ontwikkelen tot AA-accountant.</p>
+          <div class="intro">
+            <p class="lead">Sinds 2020 actief bij <strong>Crowe Foederer</strong> (Lelystad), begonnen als stagiair en inmiddels assistent-accountant FAS. Ik werk aan samenstelopdrachten, jaarrekeningen en btw-aangiften voor MKB-klanten, en help teams slimmer werken via digitalisering en als super-user van diverse applicaties.</p>
+            <ul class="highlights">
+              <li>Samenstelopdrachten & jaarrekeningen (MKB)</li>
+              <li>BTW-aangiften en digitalisering van processen</li>
+              <li>Super-user van diverse applicaties</li>
+              <li>AA-opleiding — Christelijke Hogeschool Windesheim</li>
+            </ul>
           </div>
           <figure>
             <img src="images/Foto.jpg" alt="Portret van Laurens Hagedoorn" />
           </figure>
         </div>
       </section>
-
-      <section id="links">
-        <h2 class="section-title">Links</h2>
-        <div class="link-list">
-          <div class="link-item"><a href="#" target="_blank" rel="noreferrer">LinkedIn (voeg link toe)</a><small>Professioneel</small></div>
-          <div class="link-item"><a href="mailto:l.hagedoorn@crowefoederer.nl">E-mail</a><small>l.hagedoorn@crowefoederer.nl</small></div>
-          <div class="link-item"><a href="#" target="_blank" rel="noreferrer">Afspraak plannen</a><small>15 min call</small></div>
+      <section id="opleidingen">
+        <h2 class="section-title">Opleidingen</h2>
+        <div class="card">
+          <ul class="highlights">
+            <li><strong>AA Oriëntatie Accountancy MKB</strong><br>2024 – heden<br>Christelijke Hogeschool Windesheim</li>
+            <li><strong>BSc Accountancy</strong><br>2020 – 2024<br>Christelijke Hogeschool Windesheim</li>
+            <li><strong>Junior Assistent-Accountant (MBO 4)</strong><br>2017 – 2020<br>Landstede</li>
+            <li><strong>VMBO-TL</strong><br>2013 – 2017<br>RSG Levant</li>
+          </ul>
         </div>
       </section>
-
-      <section id="fotos">
-        <h2 class="section-title">Foto's</h2>
-        <div class="gallery">
-          <img src="images/DSCF2454.JPG" alt="Foto 1"/>
-          <img src="images/photo-2.jpg" alt="Foto 2"/>
-          <img src="images/photo-3.jpg" alt="Foto 3"/>
-          <img src="images/photo-4.jpg" alt="Foto 4"/>
-          <img src="images/photo-5.jpg" alt="Foto 5"/>
-          <img src="images/photo-6.jpg" alt="Foto 6"/>
+      <section id="vaardigheden">
+        <h2 class="section-title">Vaardigheden</h2>
+        <div class="skills-grid">
+          <div class="skill-box">
+            <h3>Persoonlijke vaardigheden</h3>
+            <ul>
+              <li>Accuraat en zorgvuldig</li>
+              <li>Representatief</li>
+              <li>Resultaatgericht</li>
+              <li>Leergierig</li>
+              <li>Joviaal</li>
+              <li>Zelfstandig</li>
+              <li>Verantwoordelijkheidsgevoel</li>
+              <li>Loyaal</li>
+              <li>Behulpzaam</li>
+            </ul>
+          </div>
+          <div class="skill-box">
+            <h3>Talenkennis</h3>
+            <ul>
+              <li>Nederlands (Moedertaal)</li>
+              <li>Engels (Basiskennis)</li>
+            </ul>
+          </div>
+          <div class="skill-box">
+            <h3>Softwarekennis</h3>
+            <ul>
+              <li>MS Office</li>
+              <li>Continuous Auditor</li>
+              <li>Exact Online</li>
+              <li>Trifact365</li>
+              <li>Fiscaalgemak</li>
+              <li>Smartbooqing</li>
+              <li>E-boekhouden</li>
+              <li>Multivers</li>
+              <li>Moneybird</li>
+              <li>Visionplanner</li>
+            </ul>
+          </div>
         </div>
       </section>
-
-      <!-- Rest van de HTML blijft hetzelfde -->
     </main>
   </div>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
